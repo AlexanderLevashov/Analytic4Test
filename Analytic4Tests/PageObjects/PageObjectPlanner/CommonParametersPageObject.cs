@@ -36,7 +36,7 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
         #region Термостат колонок-1
         private readonly By _oven_1 = By.XPath("//table[@class='mat-sort']/tbody/tr[13]/td[2]");
         private readonly By _prepRun = By.XPath("//table[@class='mat-sort']/tbody/tr[14]/td[2]/div/app-editable-parameter/input");
-        private readonly By _maxTemperatureOven = By.XPath("//table[@class='mat-sort']/tbody/tr[15]/td[2]");
+        private readonly By _maxTemperatureOven = By.XPath("//table[@class='mat-sort']/tbody/tr[15]/td[2]/div/app-editable-parameter/app-control/input");
         private readonly By _tOvenTDetectors = By.XPath("//table[@class='mat-sort']/tbody/tr[16]/td[2]/div/app-editable-parameter/input");
         private readonly By _tOvenTInlets = By.XPath("//table[@class='mat-sort']/tbody/tr[17]/td[2]/div/app-editable-parameter/input");
         #endregion
@@ -48,7 +48,7 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
         private readonly By _acquisitionRateTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[21]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _thermostatTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[22]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _powerTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[23]/td[2]/div/app-editable-parameter/a4-combobox");
-        private readonly By _shiftTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[24]/td[2]");
+        private readonly By _shiftTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[24]/td[2]/div/app-editable-parameter/app-control/input");
         private readonly By _spiralOnTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[25]/td[2]/div/app-editable-parameter/input");
         private readonly By _signalInversionTCD2 = By.XPath("//table[@class='mat-sort']/tbody/tr[26]/td[2]/div/app-editable-parameter/input");
         #endregion
@@ -60,7 +60,7 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
         private readonly By _acquisitionRateTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[30]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _thermostatTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[31]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _powerTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[32]/td[2]/div/app-editable-parameter/a4-combobox");
-        private readonly By _shiftTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[33]/td[2]");
+        private readonly By _shiftTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[33]/td[2]/div/app-editable-parameter/app-control/input");
         private readonly By _spiralOnTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[34]/td[2]/div/app-editable-parameter/input");
         private readonly By _signalInversionTCD1 = By.XPath("//table[@class='mat-sort']/tbody/tr[35]/td[2]/div/app-editable-parameter/input");
         #endregion
@@ -271,7 +271,7 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
             WaitUntil.WaitElement(_webDriver, _overlay);
             var _temperature = _webDriver.FindElement(_maxTemperatureOven);
             _temperature.Click();
-            _temperature.Clear();
+            _temperature.SendKeys(Keys.Control + "A" + Keys.Delete);
             _temperature.SendKeys(temperature);
 
             return new CommonParametersPageObject(_webDriver);
@@ -454,7 +454,10 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
         public CommonParametersPageObject ShiftTCD1(string shift)
         {
             WaitUntil.WaitElement(_webDriver, _overlay);
-            _webDriver.FindElement(_shiftTCD1).SendKeys(shift);
+            var _shift = _webDriver.FindElement(_shiftTCD1);
+            _shift.Click();
+            _shift.Clear();
+            _shift.SendKeys(shift);
 
             return new CommonParametersPageObject(_webDriver);
         }

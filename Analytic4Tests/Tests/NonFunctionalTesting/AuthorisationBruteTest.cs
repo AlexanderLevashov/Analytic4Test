@@ -6,14 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Analytic4Tests.Tests
+namespace Analytic4Tests.Tests.NonFunctionalTesting
 {
     [TestFixture]
     public class AuthorisationBruteTest : BaseTest
     {
         private const int _nameSize = 5;
         private const int _sizePassword = 5;
-        [Test]
+        [Test, Order(1)]
+        [Description("Попытка брутфорса, но лучше не зацикливать")]
         public void LogInBruteForce()
         {
             var authorisation = new AuthorisationPageObject(_webDriver);

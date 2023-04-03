@@ -3,7 +3,7 @@ using Analytic4Tests.BaseObjects;
 using Analytic4Tests.JsonHandler;
 using NUnit.Framework;
 
-namespace Analytic4Tests.Tests
+namespace Analytic4Tests.Tests.NonFunctionalTesting
 {
     [TestFixture]
     public class AuthorisationTestJson : BaseTest

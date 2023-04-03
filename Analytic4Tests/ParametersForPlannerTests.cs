@@ -45,9 +45,9 @@ namespace Analytic4Tests
         
     }
 
-    public class Column
+    public class Oven
     {
-        public static string TemperatureColumn { get; } = "450";
+        public static string TemperatureOven { get; } = "450";
     }
 
     public class TCD2

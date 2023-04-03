@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Analytic4Tests.Settings
@@ -27,6 +28,7 @@ namespace Analytic4Tests.Settings
 
         public SwitchPageSettings SwitchPage()
         {
+            //_webDriver.SwitchTo().Window(_webDriver.WindowHandles.Last());
             _webDriver.SwitchTo().Window(_webDriver.WindowHandles[1]);
             return new SwitchPageSettings(_webDriver);
         }

@@ -18,6 +18,7 @@ namespace Analytic4Tests.PageObjects
         private readonly By _btnDeleteDevice = By.Id("remove-connection");
         private readonly By _btnSaveConnection = By.Id("save-connection");
         private readonly By _btnSetUpConnections = By.Id("setup-profile");
+
         #region Настройка соединений
         private readonly By _commonPanelLoadSave = By.CssSelector(".mat-menu-content");
         private readonly By _btnLoadProfile = By.CssSelector(".upload-button");
@@ -324,6 +325,22 @@ namespace Analytic4Tests.PageObjects
             return new ControlPanelPageObject(_webDriver);
         }
         #endregion
+
+        public static string GetResponsPlannerParameters
+        {
+            get
+            {
+                string getResponse = "Test Connection"; // ADMIN
+                return getResponse;
+            }
+        }
+
+        public string GetResponseConnection()
+        {
+            WaitUntil.WaitElement(_webDriver, _inputConnection);
+            string connection = _webDriver.FindElement(_inputConnection).Text;
+            return connection;
+        }
 
     }
 }

@@ -19,8 +19,4 @@
     <PackageReference Include="Selenium.WebDriver.GeckoDriver" Version="0.32.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Tests\NonFunctionalTesting\" />
-  </ItemGroup>
-
 </Project>

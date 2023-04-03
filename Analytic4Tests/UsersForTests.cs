@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Analytic4Tests.Tests
+namespace Analytic4Tests
 {
 
     class UsersForTests
     {
         //private string[] startLogin = new string[] { "test0", "test1", "test2", "admin" };
-
         public static string StartLogin
         {
             get

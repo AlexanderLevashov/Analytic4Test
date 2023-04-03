@@ -1,5 +1,6 @@
 ﻿using Analytic4Tests.JsonHandler;
 using Analytic4Tests.PageObjects;
+using Analytic4Tests.PageObjects.PageObjectPlanner;
 using Analytic4Tests.Settings;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -16,6 +17,9 @@ namespace Analytic4Tests.BaseObjects
         protected AuthorisationPageObject _auth;
         protected MainNavigatorPageObject _mainNavigator;
         protected ControlPanelPageObject _controlPanel;
+        protected PlannerCommonPageObject _plannerCommon;
+        protected AnalysisPageObject _analysis;
+        protected CommonParametersPageObject _commonParameters;
         protected EnvironmentConstants _environmentConstants;
 
         [OneTimeSetUp]
@@ -26,6 +30,9 @@ namespace Analytic4Tests.BaseObjects
             _webDriver = new FirefoxDriver(); //fireFoxOptions
             //_mainNavigator = new MainNavigatorPageObject(_webDriver);
 
+            // Если создаются большие методы, закомментировать 2 строки ниже
+            _webDriver.Manage().Cookies.DeleteAllCookies();
+            _webDriver.Navigate().GoToUrl(TestSettings.LocalHost);
             InitialiseData();
         }
 
@@ -44,10 +51,11 @@ namespace Analytic4Tests.BaseObjects
         [SetUp]
         protected void DoBeforeEach()
         {
+            //Если создается один большой метод, то раскомментировать 
             _webDriver.Manage().Cookies.DeleteAllCookies();
-            _webDriver.Navigate().GoToUrl(TestSettings.LocalHost);
+            //_webDriver.Navigate().GoToUrl(TestSettings.LocalHost);
             _webDriver.Manage().Window.Maximize();
-            WaitUntil.ShouldLocate(_webDriver, TestSettings.LocationHost);
+            //WaitUntil.ShouldLocate(_webDriver, TestSettings.LocalHost); // LocalHost || LocationHost
         }
 
         [TearDown]

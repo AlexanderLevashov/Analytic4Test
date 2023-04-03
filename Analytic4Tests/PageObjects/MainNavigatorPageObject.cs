@@ -36,8 +36,13 @@ namespace Analytic4Tests.PageObjects
         private readonly By _stateEmulator = By.CssSelector(".mat-typography app-root a4-popup-message div");
         #endregion
 
-        #region Элементы существуют?
+        #region
+        private readonly By _deviceConnections = By.CssSelector(".device-connections");
+        #endregion
 
+        #region
+        private readonly By _dialogContainer = By.CssSelector(".cdk-dialog-container .ng-star-inserted .details-wrapper");
+        private readonly By _exitObscure = By.CssSelector(".cdk-dialog-container .ng-star-inserted .container div");
         #endregion
 
         #endregion
@@ -110,9 +115,31 @@ namespace Analytic4Tests.PageObjects
             WaitUntil.WaitWarningElements(_webDriver, _stateEmulator);
             return this;
         }
+
+        public MainNavigatorPageObject Obscure()
+        {
+            WaitUntil.WaitHideElement(_webDriver, _dialogContainer);
+            _webDriver.FindElement(_exitObscure).Click();
+
+            return new MainNavigatorPageObject(_webDriver);
+        }
         #endregion
 
         #region Способы поиска элементов на странице
+
+        public bool SearchObscureElemetn()
+        {
+            try
+            {
+                _webDriver.FindElement(_deviceConnections);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
         // Пока не надо
         //public bool AreThereElementsPage()
         //{
@@ -132,7 +159,7 @@ namespace Analytic4Tests.PageObjects
         //}
 
         // Пока не надо
-        //public bool AreThereElementsPage2()
+        //public bool AreThereElementsNextPage()
         //{
         //    try
         //    {

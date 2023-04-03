@@ -32,14 +32,15 @@ namespace Analytic4Tests
             new WebDriverWait(webDriver, TimeSpan.FromSeconds(seconds)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
         }
 
+        public static void WaitHideElement(IWebDriver webDriver, By iClassName, int second = 10)
+        {
+            WebDriverWait iWait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(second));
+            iWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(iClassName));
+        }
+
         public static void WaitWarningElements(IWebDriver webDriver, By locator, int seconds = 20)
         {
             new WebDriverWait(webDriver, TimeSpan.FromSeconds(seconds)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.InvisibilityOfElementLocated(locator));
-        }
-
-        public static void WaitElementIsClickable(IWebDriver webDriver, By locator, int seconds = 20)
-        {
-            new WebDriverWait(webDriver, TimeSpan.FromSeconds(seconds)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
         }
     }
 }
