@@ -75,7 +75,7 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(6)]
         [Description("06. Переключение на 'Конфигурацию'")]
-        public void Switching()
+        public void SwitchingConfiguration()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
             matProgressBar
@@ -129,5 +129,67 @@ namespace Analytic4Tests.Tests.FunctionalTesting
                 .AcquisitionRateTCD1(TCD2.TCDAcquisitionRate_2).ThermostatTCD1(TCD2.TCDThermostat_1)
                 .PowerTCD1(TCD2.TCDPower_1).ShiftTCD1(TCD2.TCDShift);
         }
+
+        [Test, Order(11)]
+        [Description("11. Переключение на 'Режим'")]
+        public void SwitchingMode()
+        {
+            var matProgressBar = new MatProgressBarPageObject(_webDriver);
+            matProgressBar
+                .MainMode();
+        }
+
+        [Test, Order(12)]
+        [Description("12. Параметры термостата")]
+        public void MainMode()
+        {
+            var modePage = new ModePageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            var analysisThermo = new AnalysisModePageObject(_webDriver);
+            modePage
+                .Thermostates();
+            switchPages
+                .SwitchPage();     
+            analysisThermo
+                .TemperatureColumn1Row0().TimeColumn2Row0().SpeedColumn0Row1()
+                .TemperatureColumn1Row1().TimeColumn2Row1().SpeedColumn0Row2()
+                .TemperatureColumn1Row2().TimeColumn2Row2().SpeedColumn0Row3()
+                .TemperatureColumn1Row3().TimeColumn2Row3().Overlay();
+        }
+
+        [Test, Order(13)]
+        [Description("13. Запись сигнала")]
+        public void RecordSignal()
+        {     
+            var modePage = new ModePageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            var recordSignal = new RecordSignalsSignalPanelPageObject(_webDriver);
+            modePage
+                .Signals();
+            switchPages
+                .SwitchPage();
+            recordSignal
+                .ThermostatesColumns_1().TemperatureThermoColumn_1()
+                .SetTemperatureThermoColumn_1().TCD2().SignalTCD2()
+                .StateSpiralTCD2().StateBaseLineTCD2().TCD1()
+                .SignalTCD1().StateSpiralTCD1().StateBaseLineTCD1()
+                .ColumnThermostatDampers_1().CurrentPosition();
+        }
+       
+        [Test, Order(14)]
+        [Description("14. События времени")]
+        public void RunTimeEvent()
+        {
+            var modePage = new ModePageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            var runTimeEvent = new RunTimeEventsPageObject(_webDriver);
+
+            modePage
+                .Events();
+            switchPages
+                .SwitchPage();
+        }
+
+
     }
 }
