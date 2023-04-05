@@ -131,7 +131,23 @@ namespace Analytic4Tests.Tests.FunctionalTesting
         }
 
         [Test, Order(11)]
-        [Description("11. Переключение на 'Режим'")]
+        [Description("Переключение на вкладку 'Охлаждение и поджиг'")]
+        public void Cooling()
+        {
+            var configurationParameters = new ConfigurationPageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            configurationParameters
+                .CoolingParameters();
+            switchPages
+                .SwitchPage();
+            configurationParameters
+                .IgnitionParameters();
+            switchPages
+                .SwitchPage();
+        }
+
+        [Test, Order(12)]
+        [Description("12. Переключение на 'Режим'")]
         public void SwitchingMode()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
@@ -139,26 +155,29 @@ namespace Analytic4Tests.Tests.FunctionalTesting
                 .MainMode();
         }
 
-        [Test, Order(12)]
-        [Description("12. Параметры термостата")]
+        [Test, Order(13)]
+        [Description("13. Параметры термостата")]
         public void MainMode()
         {
             var modePage = new ModePageObject(_webDriver);
             var switchPages = new SwitchPageSettings(_webDriver);
             var analysisThermo = new AnalysisModePageObject(_webDriver);
-            modePage
-                .Thermostates();
             switchPages
-                .SwitchPage();     
+                .SwitchPage();
+            modePage
+                .Thermostates();    
             analysisThermo
+                .ThermostatesColums()
                 .TemperatureColumn1Row0().TimeColumn2Row0().SpeedColumn0Row1()
                 .TemperatureColumn1Row1().TimeColumn2Row1().SpeedColumn0Row2()
                 .TemperatureColumn1Row2().TimeColumn2Row2().SpeedColumn0Row3()
                 .TemperatureColumn1Row3().TimeColumn2Row3().Overlay();
+            modePage
+                .BlowingThermostates();
         }
 
-        [Test, Order(13)]
-        [Description("13. Запись сигнала")]
+        [Test, Order(14)]
+        [Description("14. Запись сигнала")]
         public void RecordSignal()
         {     
             var modePage = new ModePageObject(_webDriver);
@@ -167,17 +186,15 @@ namespace Analytic4Tests.Tests.FunctionalTesting
             modePage
                 .Signals();
             switchPages
-                .SwitchPage();
+                .SwitchPage();     
             recordSignal
-                .ThermostatesColumns_1().TemperatureThermoColumn_1()
-                .SetTemperatureThermoColumn_1().TCD2().SignalTCD2()
-                .StateSpiralTCD2().StateBaseLineTCD2().TCD1()
-                .SignalTCD1().StateSpiralTCD1().StateBaseLineTCD1()
-                .ColumnThermostatDampers_1().CurrentPosition();
+                .ShowOnlySignalsDetectors()
+                .ThermostatesColumns_1().TCD2().TCD1()
+                .ColumnThermostatDampers_1();
         }
        
-        [Test, Order(14)]
-        [Description("14. События времени")]
+        [Test, Order(15)]
+        [Description("15. События времени")]
         public void RunTimeEvent()
         {
             var modePage = new ModePageObject(_webDriver);
@@ -187,9 +204,43 @@ namespace Analytic4Tests.Tests.FunctionalTesting
             modePage
                 .Events();
             switchPages
-                .SwitchPage();
+                .SwitchPage();            
         }
 
+        [Test, Order(16)]
+        [Description("16. Переключение на 'Состояние'")]
+        public void State()
+        {
+            var matProgressBar = new MatProgressBarPageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            var statePage = new StatePageObject(_webDriver);
+            var signalState = new SignalStatePageObject(_webDriver);
+            matProgressBar
+                .MainState();
+            switchPages
+                .SwitchPage();
+            statePage
+                .Close();
+            statePage
+                .Signal();
+            switchPages
+                .SwitchPage();
+            
+        }
 
+        [Test, Order(17)]
+        [Description("17. Переключение на 'Подключения'")]
+        public void Connections()
+        {
+            var matProgressBar = new MatProgressBarPageObject(_webDriver);
+            var switchPages = new SwitchPageSettings(_webDriver);
+            var controlPanel = new ControlPanelPageObject(_webDriver);
+            matProgressBar
+                .MainConnection();
+            switchPages
+                .SwitchPage();
+            controlPanel
+                .DisconectDevice().DeleteAdditionDevice().Alert(Alert.Ok);
+        }
     }
 }

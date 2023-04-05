@@ -14,7 +14,7 @@ namespace Analytic4Tests.PageObjects
         private readonly By _mainConfiguration = By.Id("main-configuration");
         private readonly By _mainMode = By.Id("main-mode");
         private readonly By _mainState = By.Id("main-state");
-        private readonly By _mainConnection = By.Id("main-connection");
+        private readonly By _mainConnection = By.XPath("//app-status/div/div[1]/div/div[2]/button");
         private readonly By _mainHelp = By.Id("main-help");
 
         public MatProgressBarPageObject(IWebDriver webDriver)

@@ -19,6 +19,10 @@ namespace Analytic4Tests.PageObjects
         private readonly By _btnDeleteDevice = By.Id("device-delete");
         private readonly By _btnSaveConf = By.Id("configuration-save");
 
+        private readonly By _commonParameters = By.XPath("//div[@class='mat-tab-link-container']/div/div/a[1]");
+        private readonly By _coolingParameters = By.XPath("//div[@class='mat-tab-link-container']/div/div/a[2]");
+        private readonly By _ignitionParameters = By.XPath("//div[@class='mat-tab-link-container']/div/div/a[3]");
+
         public ConfigurationPageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
@@ -55,6 +59,30 @@ namespace Analytic4Tests.PageObjects
         {
             WaitUntil.WaitElement(_webDriver, _channelStatus);
             _webDriver.FindElement(_btnSaveConf).Click();
+
+            return new ConfigurationPageObject(_webDriver);
+        }
+
+        public ConfigurationPageObject CommonParameters()
+        {
+            WaitUntil.WaitElement(_webDriver, _channelStatus);
+            _webDriver.FindElement(_commonParameters).Click();
+
+            return new ConfigurationPageObject(_webDriver);
+        }
+
+        public ConfigurationPageObject CoolingParameters()
+        {
+            WaitUntil.WaitElement(_webDriver, _channelStatus);
+            _webDriver.FindElement(_coolingParameters).Click();
+
+            return new ConfigurationPageObject(_webDriver);
+        }
+
+        public ConfigurationPageObject IgnitionParameters()
+        {
+            WaitUntil.WaitElement(_webDriver, _channelStatus);
+            _webDriver.FindElement(_ignitionParameters).Click();
 
             return new ConfigurationPageObject(_webDriver);
         }

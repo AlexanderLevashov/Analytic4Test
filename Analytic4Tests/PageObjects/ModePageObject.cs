@@ -19,6 +19,9 @@ namespace Analytic4Tests.PageObjects
         private readonly By _modeSave = By.XPath("//app-mode/div[1]/div[5]/button");
         private readonly By _modeApply = By.XPath("//app-mode/div[1]/div[6]/button");
 
+        private readonly By _analysisThermostates = By.XPath("//mat-tab-header/div/div/div[1]/div[1]");
+        private readonly By _blowingThermostates = By.XPath("//mat-tab-header/div/div/div[1]/div[2]");
+
         public ModePageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
@@ -74,5 +77,20 @@ namespace Analytic4Tests.PageObjects
             return new ModePageObject(_webDriver);
         }
 
+        public ModePageObject AnalysisThermostates()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_analysisThermostates).Click();
+
+            return new ModePageObject(_webDriver);
+        }
+
+        public ModePageObject BlowingThermostates()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_blowingThermostates).Click();
+
+            return new ModePageObject(_webDriver);
+        }
     }
 }

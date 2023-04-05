@@ -11,7 +11,7 @@ namespace Analytic4Tests.PageObjects.PageObjectPlanner
 
         private readonly By _overlay = By.CssSelector(".cdk-overlay-backdrop");
 
-        private readonly By _thermostatesColums = By.XPath("//tr[3]/td[3]/div/app-editable-parameter/input");
+        private readonly By _thermostatesColums = By.XPath("//tr[3]/td[3]/div/app-editable-parameter");
         private readonly By _thermostatesContainer = By.XPath("//app-table/table/tbody/tr[3]");
         private readonly By _programmableContainer = By.CssSelector(".programmable-container");
         private readonly By _plusButton = By.XPath("//app-prog-parameter-base/div/div[1]/button[1]");
