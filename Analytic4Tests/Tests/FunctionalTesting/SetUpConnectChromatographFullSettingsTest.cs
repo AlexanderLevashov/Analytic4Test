@@ -1,6 +1,10 @@
 ﻿using Analytic4Tests.BaseObjects;
 using Analytic4Tests.PageObjects;
-using Analytic4Tests.PageObjects.PageObjectPlanner;
+using Analytic4Tests.PageObjects.CommonPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.StatePlannerPageObject;
 using Analytic4Tests.Settings;
 using NUnit.Framework;
 
@@ -224,8 +228,7 @@ namespace Analytic4Tests.Tests.FunctionalTesting
             statePage
                 .Signal();
             switchPages
-                .SwitchPage();
-            
+                .SwitchPage();       
         }
 
         [Test, Order(17)]

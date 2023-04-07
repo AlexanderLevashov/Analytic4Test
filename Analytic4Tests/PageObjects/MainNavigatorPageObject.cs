@@ -32,6 +32,21 @@ namespace Analytic4Tests.PageObjects
         private readonly By _parametersVarietyEmulators = By.CssSelector(".mat-menu-content .mat-focus-indicator");
         #endregion
 
+        #region
+        private readonly By _connectionsWrapper = By.CssSelector(".connections-wrapper");
+        private readonly By _filterConnections = By.CssSelector(".filter a4-text-box input");
+        #endregion
+
+        #region
+        private readonly By _showAllConnections = By.CssSelector(".ng-star-inserted .check-box-container");
+        #endregion
+
+        #region
+        private readonly By _connectionWidgetsWrapper = By.CssSelector(".connection-widget");
+        private readonly By _widgetInfo = By.CssSelector(".widget-info");
+        private readonly By _widgetInfoText = By.XPath("//h3");
+        #endregion
+
         #region Оповещение состояния
         private readonly By _stateEmulator = By.CssSelector(".mat-typography app-root a4-popup-message div");
         #endregion
@@ -189,6 +204,44 @@ namespace Analytic4Tests.PageObjects
         //    _webDriver.FindElements(_btnSortDevices).Select(x => x.Text).ToList();
 
         #endregion
+
+        public MainNavigatorPageObject FilterConnections()
+        {
+            WaitUntil.WaitElement(_webDriver, _connectionsWrapper);
+            var filterConnections = _webDriver.FindElement(_filterConnections);
+
+            string [] list_filter = new string[] { "test", "test connection", "something" };
+
+            for (int i = 0; i < list_filter.Length; i++)
+            {
+                filterConnections.Click();             
+                filterConnections.SendKeys(list_filter[i]);
+                filterConnections.SendKeys(Keys.Enter);
+                filterConnections.Clear();
+                WaitUntil.WaitSomeInterval(2);
+            }
+            return new MainNavigatorPageObject(_webDriver);
+        }
+
+        public MainNavigatorPageObject ShowAllConnections()
+        {
+            WaitUntil.WaitElement(_webDriver, _connectionsWrapper);
+            _webDriver.FindElement(_showAllConnections).Click();
+
+            return new MainNavigatorPageObject(_webDriver);
+        }
+
+        public MainNavigatorPageObject ConnectionWidgestWrapper(string nameParameters)
+        {
+            WaitUntil.WaitSomeInterval(2);
+            WaitUntil.WaitElement(_webDriver, _connectionsWrapper);
+            _webDriver.FindElement(_connectionWidgetsWrapper);
+
+            WaitUntil.WaitElement(_webDriver, _widgetInfo);
+            _webDriver.FindElements(_widgetInfoText).First(x => x.Text == nameParameters).Click();
+
+            return this;
+        }
 
         public string GetResponseUser()
         {

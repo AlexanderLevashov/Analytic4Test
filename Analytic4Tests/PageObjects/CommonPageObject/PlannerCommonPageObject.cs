@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Analytic4Tests.PageObjects
+namespace Analytic4Tests.PageObjects.CommonPageObject
 {
     public class PlannerCommonPageObject
     {

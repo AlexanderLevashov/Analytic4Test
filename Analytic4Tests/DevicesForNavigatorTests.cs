@@ -32,4 +32,9 @@ namespace Analytic4Tests
         public static string English { get; } = "English";
         public static string Chinese { get; } = "中國人";
     }
+
+    public class ConnectionWidgestWrapper
+    {
+        public static string TestConnection { get; } = "Test Connection";
+    }
 }

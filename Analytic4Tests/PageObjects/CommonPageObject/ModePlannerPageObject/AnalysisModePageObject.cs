@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Analytic4Tests.PageObjects
+namespace Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject
 {
     public class AnalysisModePageObject
     {

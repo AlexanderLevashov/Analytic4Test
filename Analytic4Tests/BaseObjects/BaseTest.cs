@@ -1,6 +1,8 @@
 ﻿using Analytic4Tests.JsonHandler;
 using Analytic4Tests.PageObjects;
-using Analytic4Tests.PageObjects.PageObjectPlanner;
+using Analytic4Tests.PageObjects.CommonPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageObject;
+using Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject;
 using Analytic4Tests.Settings;
 using NUnit.Framework;
 using OpenQA.Selenium;
