@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageObject
 {
@@ -15,7 +12,7 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageOb
         private readonly By _commonPanel = By.CssSelector(".mat-select-panel-wrap");
         private readonly By _commonSubPannel = By.CssSelector(".mat-menu-content");
         private readonly By _commonParameters = By.CssSelector(".mat-option-text");
-        private readonly By _commonSubParameters = By.XPath("//app-select/mat-select");
+        private readonly By _commonSubParameters = By.XPath("//app-external-parameter/app-method-parameter/div/p4-select/mat-select/div");
         private readonly By _obscure = By.CssSelector(".cdk-overlay-backdrop-showing");
         #endregion
 
@@ -25,8 +22,8 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageOb
         private readonly By _gateway = By.XPath("//table[@class='mat-sort']/tbody/tr[4]/td[2]");
         private readonly By _ambientPressure = By.XPath("//table[@class='mat-sort']/tbody/tr[5]/td[2]/div/app-editable-parameter/app-control/input");
         private readonly By _ambientTemperature = By.XPath("//table[@class='mat-sort']/tbody/tr[6]/td[2]/div/app-editable-parameter/app-control/input");
-        private readonly By _blowingMethod = By.XPath("//table[@class='mat-sort']/tbody/tr[7]/td[2]");
-        private readonly By _defaultMethod = By.XPath("//table[@class='mat-sort']/tbody/tr[8]/td[2]");
+        private readonly By _blowingMethod = By.XPath("//table[@class='mat-sort']/tbody/tr[7]/td[2]/div");
+        private readonly By _defaultMethod = By.XPath("//table[@class='mat-sort']/tbody/tr[8]/td[2]/div");
         private readonly By _soundKeyPressing = By.XPath("//table[@class='mat-sort']/tbody/tr[9]/td[2]/div/app-editable-parameter/input");
         private readonly By _soundWhenReady = By.XPath("//table[@class='mat-sort']/tbody/tr[10]/td[2]/div/app-editable-parameter/input");
         private readonly By _soundAfterInitial = By.XPath("//table[@class='mat-sort']/tbody/tr[11]/td[2]/div/app-editable-parameter/input");
@@ -78,6 +75,99 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageOb
         private readonly By _DFPCAirFID = By.XPath("//table[@class='mat-sort']/tbody/tr[27]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _DFPCMakeup = By.XPath("//table[@class='mat-sort']/tbody/tr[28]/td[2]/div/app-editable-parameter/a4-combobox");
         private readonly By _makeUpGasType = By.XPath("//table[@class='mat-sort']/tbody/tr[29]/td[2]/div/app-editable-parameter/a4-combobox");
+        #endregion
+
+        #region ПИД-1 для Эмулятора
+        private readonly By _FID_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[18]/td[2]");
+        private readonly By _activityFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[19]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _acquisitionRateFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[20]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _thermostatFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[21]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _maxTemperatureFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[22]/td[2]");
+        private readonly By _heaterControlOffFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[23]/td[2]/div/app-editable-parameter/input");
+        private readonly By _DFPCHydrogenFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[24]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _DFPCAirFIDEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[25]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _DFPCMakeupEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[26]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _makeUpGasTypeEmulator = By.XPath("//table[@class='mat-sort']/tbody/tr[27]/td[2]/div/app-editable-parameter/a4-combobox");
+
+        #endregion
+
+        #region ДТП-3 для Эмулятора
+        private readonly By _TCD_3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[28]/td[2]");
+        private readonly By _channelTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[29]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _typeDetectorTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[30]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _acquisitionRateTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[31]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _thermostatTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[32]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _maxTemperatureTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[33]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _disableControlTemperatureTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[34]/td[2]/div/app-editable-parameter/input");
+        private readonly By _TCD3EmulatorComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[35]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD3EmulatorMakeUp = By.XPath("//table[@class='mat-sort']/tbody/tr[36]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD3EmulatorTypeComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[37]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _powerTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[38]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _shiftTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[39]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _spiralOnTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[40]/td[2]/div/app-editable-parameter/input");
+        private readonly By _signalInversionTCD3Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[41]/td[2]/div/app-editable-parameter/input");
+        #endregion
+
+        #region ДТП-1 для Эмулятора
+        private readonly By _TCD_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[42]/td[2]");
+        private readonly By _channelTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[43]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _typeDetectorTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[44]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _acquisitionRateTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[45]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _thermostatTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[46]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _maxTemperatureTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[47]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _disableControlTemperatureTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[48]/td[2]/div/app-editable-parameter/input");
+        private readonly By _TCD1EmulatorComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[49]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD1EmulatorMakeUp = By.XPath("//table[@class='mat-sort']/tbody/tr[50]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD1EmulatorTypeComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[51]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _powerTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[52]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _shiftTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[53]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _spiralOnTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[54]/td[2]/div/app-editable-parameter/input");
+        private readonly By _signalInversionTCD1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[55]/td[2]/div/app-editable-parameter/input");
+        #endregion
+
+        #region ДТП-2 для Эмулятора
+        private readonly By _TCD_2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[56]/td[2]");
+        private readonly By _channelTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[57]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _typeDetectorTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[58]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _acquisitionRateTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[59]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _thermostatTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[60]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _maxTemperatureTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[61]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _disableControlTemperatureTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[62]/td[2]/div/app-editable-parameter/input");
+        private readonly By _TCD2EmulatorComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[63]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD2EmulatorMakeUp = By.XPath("//table[@class='mat-sort']/tbody/tr[64]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _TCD2EmulatorTypeComparisonGas = By.XPath("//table[@class='mat-sort']/tbody/tr[65]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _powerTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[66]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _shiftTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[67]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _spiralOnTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[68]/td[2]/div/app-editable-parameter/input");
+        private readonly By _signalInversionTCD2Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[69]/td[2]/div/app-editable-parameter/input");
+
+        #endregion
+
+        #region Порт ввода-1 Эмулятор
+        private readonly By _inlet_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[70]/td[2]");
+        private readonly By _typeInlet_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[71]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _label_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[72]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _valveDischargeChannel_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[73]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _onColumnInjection_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[74]/td[2]/div/app-editable-parameter/input");
+        private readonly By _carrierGasType_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[75]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _wasteGasType_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[76]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _DFPCSeptumpurgeFlow_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[77]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _typeCarrierGasType_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[78]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _leakControl_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[79]/td[2]/div/app-editable-parameter/input");
+        private readonly By _lermittedLeak_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[80]/td[2]/div/app-editable-parameter/app-control/input");
+        #endregion
+
+        #region Колонка-1 Эмулятор
+        private readonly By _column_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[114]/td[2]");
+        private readonly By _channel_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[115]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _inlet_Colum_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[116]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _typeColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[117]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _nameColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[118]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _lengthColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[119]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _diameterColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[120]/td[2]/div/app-editable-parameter/app-control/input");
+        private readonly By _outletPressureColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[121]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _outletPressureValueColumn_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[122]/td[2]/div/app-editable-parameter/a4-combobox");
+        private readonly By _savingHelium_1Emulator = By.XPath("//table[@class='mat-sort']/tbody/tr[123]/td[2]/div/app-editable-parameter/input");
         #endregion
 
         #region ПФД-1

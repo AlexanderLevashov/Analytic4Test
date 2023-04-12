@@ -1,4 +1,5 @@
-﻿using Analytic4Tests.JsonHandler;
+﻿using Allure.Commons;
+using Analytic4Tests.JsonHandler;
 using Analytic4Tests.PageObjects;
 using Analytic4Tests.PageObjects.CommonPageObject;
 using Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageObject;
@@ -10,9 +11,11 @@ using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TechTalk.SpecFlow;
 
 namespace Analytic4Tests.BaseObjects
 {
+    [Binding]
     public class BaseTest
     {
         protected IWebDriver _webDriver;
@@ -23,6 +26,7 @@ namespace Analytic4Tests.BaseObjects
         protected AnalysisPageObject _analysis;
         protected CommonParametersPageObject _commonParameters;
         protected EnvironmentConstants _environmentConstants;
+        public static AllureLifecycle allure = AllureLifecycle.Instance;
 
         [OneTimeSetUp]
         protected void DoBeforeAllTests()
@@ -36,6 +40,7 @@ namespace Analytic4Tests.BaseObjects
             _webDriver.Manage().Cookies.DeleteAllCookies();
             _webDriver.Navigate().GoToUrl(TestSettings.LocalHost);
             InitialiseData();
+            allure.CleanupResultDirectory();
         }
 
         private void InitialiseData()
@@ -47,7 +52,7 @@ namespace Analytic4Tests.BaseObjects
         [OneTimeTearDown]
         protected void DoAfterAllTests()
         {
-
+            
         }
 
         [SetUp]

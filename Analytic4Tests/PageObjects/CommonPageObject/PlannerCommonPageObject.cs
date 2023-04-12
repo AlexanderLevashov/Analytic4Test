@@ -1,7 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Analytic4Tests.PageObjects.CommonPageObject

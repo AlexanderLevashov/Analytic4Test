@@ -1,4 +1,5 @@
-﻿using Analytic4Tests.BaseObjects;
+﻿using Allure.Commons;
+using Analytic4Tests.BaseObjects;
 using Analytic4Tests.PageObjects;
 using Analytic4Tests.PageObjects.CommonPageObject;
 using Analytic4Tests.PageObjects.CommonPageObject.ConfigurationPlannerPageObject;
@@ -7,19 +8,24 @@ using Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject;
 using Analytic4Tests.PageObjects.CommonPageObject.StatePlannerPageObject;
 using Analytic4Tests.Settings;
 using NUnit.Framework;
+using TechTalk.SpecFlow;
 
 namespace Analytic4Tests.Tests.FunctionalTesting
 {
+    [Binding]
     [TestFixture]
     public class SetUpConnectChromatographFullSettingsTest : BaseTest
     {
+        AllureLifecycle allure = AllureLifecycle.Instance;
         [Test, Order(1)]
         [Description("01. Авторизация и ввод данных для неё")]
         public void Authorisation()
         {
+            
             var authorisation = new AuthorisationPageObject(_webDriver);
             authorisation
                 .Login(UsersForTests.StartLogin, UsersForTests.StartPass);
+            //allure.StopStep();
         }
 
         [Test, Order(2)]
@@ -204,7 +210,6 @@ namespace Analytic4Tests.Tests.FunctionalTesting
             var modePage = new ModePageObject(_webDriver);
             var switchPages = new SwitchPageSettings(_webDriver);
             var runTimeEvent = new RunTimeEventsPageObject(_webDriver);
-
             modePage
                 .Events();
             switchPages

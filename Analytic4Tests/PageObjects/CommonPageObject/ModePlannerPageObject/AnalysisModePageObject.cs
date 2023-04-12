@@ -1,7 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject
 {
@@ -10,6 +7,19 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject
         private IWebDriver _webDriver;
 
         private readonly By _overlay = By.CssSelector(".cdk-overlay-backdrop");
+
+        private readonly By _valvePrepRun = By.XPath("//tr[3]/td[3]/div/app-editable-parameter/input");
+        private readonly By _valveTimeConnection = By.XPath("//tr[4]/td[3]/div/app-editable-parameter/input");
+        private readonly By _commonParameters = By.CssSelector(".programmable-container");
+        private readonly By _valveContainerBtnPlus = By.XPath("//app-prog-parameter-base/div/div[2]/button[1]");
+        private readonly By _valveContainerBtnMinus = By.XPath("//app-prog-parameter-base/div/div[2]/button[2]");
+        private readonly By _valveContainerUpArrow = By.XPath("//app-prog-parameter-base/div/div[2]/button[3]");
+        private readonly By _valveContainerDownArrow = By.XPath("//app-prog-parameter-base/div/div[2]/button[4]");
+        private readonly By _valveContainerBtnApply = By.XPath("//app-prog-parameter-base/div/div[2]/button[5]");
+        private readonly By _valveContainePrepRun = By.XPath("//div/app-control/p4-checkbox/div/a4-check-box/div/a4-img/div/div");
+        private readonly By _valveContainerMenuTableCheckBox = By.XPath("//td[1]/app-control/p4-checkbox/div/a4-check-box/div");
+        private readonly By _vavleContainerInput = By.XPath("//app-table/table/tbody/tr[1]/td[2]/app-control/input");
+        private readonly By _valveTemperature = By.XPath("//tr[5]/td[3]/div/app-editable-parameter/app-control/input");
 
         private readonly By _thermostatesColums = By.XPath("//tr[3]/td[3]/div/app-editable-parameter");
         private readonly By _thermostatesContainer = By.XPath("//app-table/table/tbody/tr[3]");
@@ -75,6 +85,69 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject
         {
             WaitUntil.WaitElement(_webDriver, _programmableContainer);
             _webDriver.FindElement(_prepRun).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValvePrepRun()
+        {
+            WaitUntil.WaitElement(_webDriver, _programmableContainer);
+            _webDriver.FindElement(_valvePrepRun).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveTimeConnection()
+        {
+            WaitUntil.WaitElement(_webDriver, _programmableContainer);
+            _webDriver.FindElement(_valveTimeConnection).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveContainerBtnPlus()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainerBtnPlus).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveContainerBtnMinus()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainerBtnMinus).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveContainerUpArrow()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainerUpArrow).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+        public AnalysisModePageObject ValveContainerDownArrow()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainerDownArrow).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveContainerBtnApply()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainerBtnApply).Click();
+
+            return new AnalysisModePageObject(_webDriver);
+        }
+
+        public AnalysisModePageObject ValveContainePrepRun()
+        {
+            WaitUntil.WaitElement(_webDriver, _commonParameters);
+            _webDriver.FindElement(_valveContainePrepRun).Click();
 
             return new AnalysisModePageObject(_webDriver);
         }

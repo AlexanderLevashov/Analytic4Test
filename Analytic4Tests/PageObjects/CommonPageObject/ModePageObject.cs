@@ -10,14 +10,21 @@ namespace Analytic4Tests.PageObjects.CommonPageObject
         private IWebDriver _webDriver;
 
         private readonly By _plannerControlMenu = By.CssSelector(".control-menu");
-        private readonly By _modeLoad = By.XPath("//app-mode/div[1]/div[1]/button");
+        private readonly By _modeLoad = By.Id("mode-load");
         private readonly By _appMethodDiaglog = By.CssSelector(".mat-dialog-container app-method-dialog");
 
-        private readonly By _thermostates = By.XPath("//app-mode/div[1]/div[2]/button");
-        private readonly By _signals = By.XPath("//app-mode/div[1]/div[3]/button");
-        private readonly By _events = By.XPath("//app-mode/div[1]/div[4]/button");
-        private readonly By _modeSave = By.XPath("//app-mode/div[1]/div[5]/button");
-        private readonly By _modeApply = By.XPath("//app-mode/div[1]/div[6]/button");
+        #region Эмулятор краны
+        private readonly By _valves = By.Id("valves");
+        private readonly By _ports = By.Id("ports");
+        private readonly By _columns = By.Id("columns");
+        private readonly By _detectors = By.Id("detectors");
+        #endregion
+
+        private readonly By _thermostates = By.Id("thermostates");
+        private readonly By _signals = By.Id("signals");
+        private readonly By _events = By.Id("events");
+        private readonly By _modeSave = By.Id("mode-save");
+        private readonly By _modeApply = By.Id("mode-apply");
 
         private readonly By _analysisThermostates = By.XPath("//mat-tab-header/div/div/div[1]/div[1]");
         private readonly By _blowingThermostates = By.XPath("//mat-tab-header/div/div/div[1]/div[2]");
@@ -35,6 +42,38 @@ namespace Analytic4Tests.PageObjects.CommonPageObject
             WaitUntil.WaitElement(_webDriver, _appMethodDiaglog);
 
             return this;
+        }
+
+        public ModePageObject Valves()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_valves).Click();
+
+            return new ModePageObject(_webDriver);
+        }
+
+        public ModePageObject Ports()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_ports).Click();
+
+            return new ModePageObject(_webDriver);
+        }
+
+        public ModePageObject Columns()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_columns).Click();
+
+            return new ModePageObject(_webDriver);
+        }
+
+        public ModePageObject Detectors()
+        {
+            WaitUntil.WaitElement(_webDriver, _plannerControlMenu);
+            _webDriver.FindElement(_detectors).Click();
+
+            return new ModePageObject(_webDriver);
         }
 
         public ModePageObject Thermostates()

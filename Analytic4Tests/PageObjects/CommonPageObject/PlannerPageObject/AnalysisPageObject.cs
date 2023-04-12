@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject
 {
@@ -21,7 +18,7 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject
         private readonly By _arrowUp = By.XPath("//app-analysis-series/div/div[1]/div/div[1]/button[2]");
         private readonly By _cyclеFor = By.XPath("//app-analysis-series/div/div[1]/div/div[1]/button[3]");
         private readonly By _deleteAnalysis = By.XPath("//app-analysis-series/div/div[1]/div/div[1]/button[4]");
-        private readonly By _matAnalysisPanel = By.XPath("//app-analysis-series/div/div[1]/div/div[1]/app-select");
+        private readonly By _matAnalysisPanel = By.XPath("//app-analysis-series/div/div[1]/div/div[1]/p4-select/mat-select/div/div[1]");
         private readonly By _matSelectPanel = By.CssSelector(".mat-select-panel.mat-select-panel");
         #endregion
 
@@ -127,7 +124,7 @@ namespace Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject
         #endregion
 
         #region Назначение
-        private readonly By _purposeFirst = By.XPath("//td[11]/div/div/app-select/mat-select/div/div[1]");
+        private readonly By _purposeFirst = By.XPath("//td[11]/div/div/p4-select/mat-select/div/div[1]");
         private readonly By _purposeWrapPanel = By.CssSelector(".mat-select-panel-wrap");
         private readonly By _purposeFirstParameters = By.CssSelector(".mat-option-text");
         #endregion
