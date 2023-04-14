@@ -126,7 +126,7 @@ namespace Analytic4Tests.PageObjects
             return new ControlPanelPageObject(_webDriver);
         }
 
-        public ControlPanelPageObject SetUpConnections(string nameParameters)
+        public ControlPanelPageObject SetUpConnections()
         {
             WaitUntil.WaitElement(_webDriver, _panelControlMenu);
             _webDriver.FindElement(_btnSetUpConnections).Click();

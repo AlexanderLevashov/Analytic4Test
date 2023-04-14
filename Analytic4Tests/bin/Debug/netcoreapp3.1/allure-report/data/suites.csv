@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Wed Apr 12 11:54:05 MSK 2023","Wed Apr 12 11:54:05 MSK 2023","79","","","","","","User is  logged",""
+"passed","Thu Apr 13 09:12:39 MSK 2023","Thu Apr 13 09:12:39 MSK 2023","15","","","","","","Perform user authorisation. Logout and login as guest.",""

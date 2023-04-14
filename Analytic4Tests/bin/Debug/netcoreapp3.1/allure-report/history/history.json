@@ -1,1 +1,1 @@
-{"User is  logged":{"statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"8f6bcf4231bd06cb","status":"broken","statusDetails":"No matching step definition found for the step","time":{"start":1681289645663,"stop":1681289645742,"duration":79}}]}}
+{"Perform user authorisation. Logout and login as guest.":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"cf89bc64861ed3d5","status":"passed","time":{"start":1681366359366,"stop":1681366359381,"duration":15}}]}}
