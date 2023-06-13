@@ -119,3 +119,5 @@ C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\obj\Debug\netcoreapp3.
 C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\obj\Debug\netcoreapp3.1\Analytic4Tests.pdb
 C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\obj\Debug\netcoreapp3.1\Analytic4Tests.genruntimeconfig.cache
 C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\obj\Debug\netcoreapp3.1\Analytic4Tests.csproj.AssemblyReference.cache
+C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\bin\Debug\netcoreapp3.1\AspectInjector.Broker.dll
+C:\Users\u0250\source\repos\Analytic4Tests\Analytic4Tests\bin\Debug\netcoreapp3.1\NUnit.Allure.dll

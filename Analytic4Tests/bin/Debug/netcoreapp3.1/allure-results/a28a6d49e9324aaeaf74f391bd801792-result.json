@@ -1,0 +1,92 @@
+{
+  "uuid": "e4fe697f-ebf1-45d5-8121-16f9a0905686-tr-0-1013",
+  "historyId": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogOut",
+  "fullName": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogOut",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "C0250"
+    },
+    {
+      "name": "package",
+      "value": "Analytic4Tests.Tests.FunctionalTesting"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogOut"
+    },
+    {
+      "name": "testClass",
+      "value": "AuthorisationTest"
+    },
+    {
+      "name": "severity",
+      "value": "normal"
+    },
+    {
+      "name": "feature",
+      "value": "Feature2"
+    },
+    {
+      "name": "story",
+      "value": "Story2"
+    },
+    {
+      "name": "owner",
+      "value": "Owner1"
+    }
+  ],
+  "links": [
+    {
+      "name": "Issue2",
+      "url": "Issue2",
+      "type": "issue"
+    },
+    {
+      "name": "Tms2",
+      "url": "Tms2",
+      "type": "tms"
+    }
+  ],
+  "name": "LogOut",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "LogOut"
+  },
+  "stage": "finished",
+  "description": "02. Выполнить выход\n",
+  "steps": [
+    {
+      "name": "LogOut",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "1523f295734544c2a04d5717f05053df-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1684139287392,
+      "stop": 1684139289854
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1684139287392,
+  "stop": 1684139289854
+}

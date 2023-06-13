@@ -1,0 +1,76 @@
+{
+  "uuid": "5d993778-7be8-4c0f-96e4-f4a1422652bb-tc-0-1011",
+  "name": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogIn",
+  "children": [
+    "fc3ebe87-2637-43e2-bf76-c9a04f267ec5-tr-0-1012"
+  ],
+  "befores": [
+    {
+      "name": "DoBeforeAllTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1684139287358,
+      "stop": 1684139287358
+    },
+    {
+      "name": "DoBeforeEach",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1684139287358,
+      "stop": 1684139287358
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1684139287358,
+      "stop": 1684139287358
+    },
+    {
+      "name": "DoAfterAllTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1684139287358,
+      "stop": 1684139287358
+    }
+  ],
+  "links": [],
+  "start": 1684139286678,
+  "stop": 1684139287384
+}

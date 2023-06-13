@@ -17,6 +17,16 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)allure.commons\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json" Condition="Exists('$(NuGetPackageRoot)allure.commons\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json')">
+      <NuGetPackageId>Allure.Commons</NuGetPackageId>
+      <NuGetPackageVersion>3.5.0.73</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>allureConfig.Template.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Content Include="$(NuGetPackageRoot)specflow.allure\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json" Condition="Exists('$(NuGetPackageRoot)specflow.allure\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json')">
       <NuGetPackageId>SpecFlow.Allure</NuGetPackageId>
       <NuGetPackageVersion>3.5.0.73</NuGetPackageVersion>
@@ -28,7 +38,7 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)specflow.tools.msbuild.generation\3.9.74\build\SpecFlow.Tools.MsBuild.Generation.props" Condition="Exists('$(NuGetPackageRoot)specflow.tools.msbuild.generation\3.9.74\build\SpecFlow.Tools.MsBuild.Generation.props')" />
-    <Import Project="$(NuGetPackageRoot)nunit\3.13.1\build\NUnit.props" Condition="Exists('$(NuGetPackageRoot)nunit\3.13.1\build\NUnit.props')" />
+    <Import Project="$(NuGetPackageRoot)nunit\3.13.2\build\NUnit.props" Condition="Exists('$(NuGetPackageRoot)nunit\3.13.2\build\NUnit.props')" />
     <Import Project="$(NuGetPackageRoot)specflow.nunit\3.9.74\build\SpecFlow.NUnit.props" Condition="Exists('$(NuGetPackageRoot)specflow.nunit\3.9.74\build\SpecFlow.NUnit.props')" />
     <Import Project="$(NuGetPackageRoot)nunit3testadapter\3.17.0\build\netcoreapp2.1\NUnit3TestAdapter.props" Condition="Exists('$(NuGetPackageRoot)nunit3testadapter\3.17.0\build\netcoreapp2.1\NUnit3TestAdapter.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.testplatform.testhost\16.9.4\build\netcoreapp2.1\Microsoft.TestPlatform.TestHost.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testplatform.testhost\16.9.4\build\netcoreapp2.1\Microsoft.TestPlatform.TestHost.props')" />
@@ -37,5 +47,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgBoDi Condition=" '$(PkgBoDi)' == '' ">C:\Users\u0250\.nuget\packages\bodi\1.5.0</PkgBoDi>
+    <PkgAspectInjector Condition=" '$(PkgAspectInjector)' == '' ">C:\Users\u0250\.nuget\packages\aspectinjector\2.6.0</PkgAspectInjector>
   </PropertyGroup>
 </Project>

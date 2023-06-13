@@ -17,8 +17,7 @@ namespace Analytic4Tests.Tests.FunctionalTesting
         [Test, Order(1)]
         [Description("01. Авторизация и ввод данных для неё")]
         public void Authorisation()
-        {
-            
+        {        
             var authorisation = new AuthorisationPageObject(_webDriver);
             authorisation
                 .Login(UsersForTests.StartLogin, UsersForTests.StartPass);

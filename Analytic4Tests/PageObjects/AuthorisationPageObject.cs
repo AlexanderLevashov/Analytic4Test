@@ -15,6 +15,7 @@ namespace Analytic4Tests.PageObjects
         private readonly By _btnChangeLanguage = By.CssSelector(".user-login div div button");
         private readonly By _panelChangeLanguage = By.CssSelector(".mat-menu-content");
         private readonly By _parametersChangeLanguage = By.CssSelector(".mat-focus-indicator");
+        private readonly By _dashboardWrapper = By.CssSelector(".dashboard-wrapper");
 
         #region Алерты
         private readonly By _stateLoginPass = By.XPath("/html/body/app-root/a4-popup-message/div");
@@ -84,6 +85,20 @@ namespace Analytic4Tests.PageObjects
             _webDriver.FindElement(_singAsGuest).Click();
 
             return new AuthorisationPageObject(_webDriver);
+        }
+
+        public bool IsLoggedIn()
+        {
+            try
+            {
+                WaitUntil.WaitElement(_webDriver, _dashboardWrapper);
+                var loggedInElement = _webDriver.FindElement(By.CssSelector(".dashboard-wrapper"));
+                return loggedInElement != null;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
     }
 }

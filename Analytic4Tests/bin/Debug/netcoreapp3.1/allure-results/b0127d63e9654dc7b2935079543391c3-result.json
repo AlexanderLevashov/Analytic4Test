@@ -1,0 +1,92 @@
+{
+  "uuid": "fc3ebe87-2637-43e2-bf76-c9a04f267ec5-tr-0-1012",
+  "historyId": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogIn",
+  "fullName": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogIn",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "C0250"
+    },
+    {
+      "name": "package",
+      "value": "Analytic4Tests.Tests.FunctionalTesting"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogIn"
+    },
+    {
+      "name": "testClass",
+      "value": "AuthorisationTest"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "feature",
+      "value": "Feature1"
+    },
+    {
+      "name": "story",
+      "value": "Story1"
+    },
+    {
+      "name": "owner",
+      "value": "Owner1"
+    }
+  ],
+  "links": [
+    {
+      "name": "Issue1",
+      "url": "Issue1",
+      "type": "issue"
+    },
+    {
+      "name": "Tms1",
+      "url": "Tms1",
+      "type": "tms"
+    }
+  ],
+  "name": "LogIn",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "LogIn"
+  },
+  "stage": "finished",
+  "description": "01. Выполнить вход пользователя\n",
+  "steps": [
+    {
+      "name": "LogIn",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "6847f2f8b5064baf88ed908627cb9986-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1684139286690,
+      "stop": 1684139287360
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1684139286690,
+  "stop": 1684139287365
+}

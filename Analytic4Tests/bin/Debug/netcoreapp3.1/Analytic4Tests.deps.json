@@ -8,9 +8,11 @@
     ".NETCoreApp,Version=v3.1": {
       "Analytic4Tests/1.0.0": {
         "dependencies": {
+          "Allure.Commons": "3.5.0.73",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
-          "NUnit": "3.13.1",
+          "NUnit": "3.13.2",
+          "NUnit.Allure": "1.2.1.1",
           "NUnit3TestAdapter": "3.17.0",
           "Newtonsoft.Json": "13.0.2",
           "Selenium.Support": "4.8.0",
@@ -35,6 +37,14 @@
           "lib/netstandard2.0/Allure.Commons.dll": {
             "assemblyVersion": "3.5.0.73",
             "fileVersion": "3.5.0.73"
+          }
+        }
+      },
+      "AspectInjector/2.6.0": {
+        "runtime": {
+          "lib/netstandard2.0/AspectInjector.Broker.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.0.0"
           }
         }
       },
@@ -440,14 +450,27 @@
           }
         }
       },
-      "NUnit/3.13.1": {
+      "NUnit/3.13.2": {
         "dependencies": {
           "NETStandard.Library": "2.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/nunit.framework.dll": {
-            "assemblyVersion": "3.13.1.0",
-            "fileVersion": "3.13.1.0"
+            "assemblyVersion": "3.13.2.0",
+            "fileVersion": "3.13.2.0"
+          }
+        }
+      },
+      "NUnit.Allure/1.2.1.1": {
+        "dependencies": {
+          "Allure.Commons": "3.5.0.73",
+          "AspectInjector": "2.6.0",
+          "NUnit": "3.13.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NUnit.Allure.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -571,7 +594,7 @@
       },
       "SpecFlow.NUnit/3.9.74": {
         "dependencies": {
-          "NUnit": "3.13.1",
+          "NUnit": "3.13.2",
           "SpecFlow": "3.9.74",
           "SpecFlow.Tools.MsBuild.Generation": "3.9.74"
         },
@@ -1293,6 +1316,13 @@
       "path": "allure.commons/3.5.0.73",
       "hashPath": "allure.commons.3.5.0.73.nupkg.sha512"
     },
+    "AspectInjector/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VTd4JwPJBdO+g0GFY9xPtsB63/iCs9WCCZkcw2KJ+4gCP3N1LQ99bsfuQhFfrdZOYxJ8I5HBPyojqGVJyKzuOA==",
+      "path": "aspectinjector/2.6.0",
+      "hashPath": "aspectinjector.2.6.0.nupkg.sha512"
+    },
     "BoDi/1.5.0": {
       "type": "package",
       "serviceable": true,
@@ -1440,12 +1470,19 @@
       "path": "nuget.frameworks/5.0.0",
       "hashPath": "nuget.frameworks.5.0.0.nupkg.sha512"
     },
-    "NUnit/3.13.1": {
+    "NUnit/3.13.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vWBvrSelmTYwqHWvO3dA63z7cOpaFR/3nJ9MMVLBkWeaWa7oiglPPm5g1h96B4i2XXqjFexxhR5MyMjmIJYPfg==",
-      "path": "nunit/3.13.1",
-      "hashPath": "nunit.3.13.1.nupkg.sha512"
+      "sha512": "sha512-u+fz/lXyR4vlamySNAEMrXvh+GhAQiB6/aVZtU5WjivR5zF26Ui0tfteDtWqT90k9D8y6g8rFKYQC97Z7d195w==",
+      "path": "nunit/3.13.2",
+      "hashPath": "nunit.3.13.2.nupkg.sha512"
+    },
+    "NUnit.Allure/1.2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bb6hpYRrJFnWh3CePRY63E7D75eOG9waEYePUE+iMaRLq5mtRmYZKg4qUG0492AnoFjOnTRFpMlE1ucvgbk2PQ==",
+      "path": "nunit.allure/1.2.1.1",
+      "hashPath": "nunit.allure.1.2.1.1.nupkg.sha512"
     },
     "NUnit3TestAdapter/3.17.0": {
       "type": "package",

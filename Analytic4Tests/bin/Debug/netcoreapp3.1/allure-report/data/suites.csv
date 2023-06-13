@@ -1,2 +1,7 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Apr 13 09:12:39 MSK 2023","Thu Apr 13 09:12:39 MSK 2023","15","","","","","","Perform user authorisation. Logout and login as guest.",""
+"passed","Mon May 15 09:28:21 MSK 2023","Mon May 15 09:28:23 MSK 2023","1284","","","","AuthorisationTest","LoginLikeGuest","LoginLikeGuest","03. Выполнить вход от гостя
+"
+"passed","Mon May 15 09:28:19 MSK 2023","Mon May 15 09:28:21 MSK 2023","2566","","","","AuthorisationTest","LogOut","LogOut","02. Выполнить выход
+"
+"passed","Mon May 15 09:28:18 MSK 2023","Mon May 15 09:28:19 MSK 2023","641","","","","AuthorisationTest","LogIn","LogIn","01. Выполнить вход пользователя
+"
