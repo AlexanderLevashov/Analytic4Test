@@ -1,8 +1,8 @@
 {
-  "uuid": "5d993778-7be8-4c0f-96e4-f4a1422652bb-tc-0-1011",
-  "name": "Analytic4Tests.Tests.FunctionalTesting.AuthorisationTest.LogIn",
+  "uuid": "d412b71a-ece2-42cc-9608-38102f3a0ae5-tc-0-1015",
+  "name": "Analytic4Tests.Tests.FunctionalTesting.ChangeLanguageTest.ChangeLanguage",
   "children": [
-    "fc3ebe87-2637-43e2-bf76-c9a04f267ec5-tr-0-1012"
+    "aa62def6-75ea-4853-a776-08f6924db7e0-tr-0-1017"
   ],
   "befores": [
     {
@@ -17,8 +17,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1684139287358,
-      "stop": 1684139287358
+      "start": 1686813833377,
+      "stop": 1686813833377
     },
     {
       "name": "DoBeforeEach",
@@ -32,8 +32,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1684139287358,
-      "stop": 1684139287358
+      "start": 1686813833377,
+      "stop": 1686813833377
     }
   ],
   "afters": [
@@ -49,8 +49,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1684139287358,
-      "stop": 1684139287358
+      "start": 1686813833377,
+      "stop": 1686813833377
     },
     {
       "name": "DoAfterAllTests",
@@ -66,11 +66,11 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1684139287358,
-      "stop": 1684139287358
+      "start": 1686813833377,
+      "stop": 1686813833377
     }
   ],
   "links": [],
-  "start": 1684139286678,
-  "stop": 1684139287384
+  "start": 1686813825907,
+  "stop": 1686813833383
 }

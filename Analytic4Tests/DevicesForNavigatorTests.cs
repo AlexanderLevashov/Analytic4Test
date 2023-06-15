@@ -23,7 +23,18 @@ namespace Analytic4Tests
     public class LogOutForNavigatorTests
     {
         public static string Language { get; } = "Язык (language)";
+        public static string Localisation { get; } = "Своя локализация";
         public static string Exit { get; } = "Выйти";
+        public static string LanguageEnglish { get; } = "Language";
+        public static string LanguageChinise { get; } = "语 (Language)";
+
+    }
+
+    public class LocalisationSettings
+    {
+        public static string TurnOn { get; } = "Включена";
+        public static string Clear { get; } = "Стереть";
+        public static string Download { get; } = "Скачать";
     }
 
     public class LanguageForNavigarorTests

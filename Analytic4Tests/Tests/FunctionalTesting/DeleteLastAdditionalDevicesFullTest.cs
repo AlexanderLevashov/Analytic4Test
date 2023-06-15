@@ -1,15 +1,25 @@
-﻿using Analytic4Tests.BaseObjects;
+﻿using Allure.Commons;
+using Analytic4Tests.BaseObjects;
 using Analytic4Tests.PageObjects;
 using Analytic4Tests.Settings;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace Analytic4Tests.Tests.FunctionalTesting
 {
     [TestFixture]
+    [AllureNUnit]
     public class DeleteLastAdditionalDevicesFullTest : BaseTest
     {
         [Test, Order(1)]
         [Description("01. Авторизация и ввод данных для неё")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature1")]
+        [AllureStory("Story1")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue1")]
+        [AllureTms("Tms1")]
         public void LogIn()
         {
             var authorisation = new AuthorisationPageObject(_webDriver);
@@ -19,6 +29,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(2)]
         [Description("02. Создание соединения")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature2")]
+        [AllureStory("Story2")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue2")]
+        [AllureTms("Tms2")]
         public void CreateConnection()
         {
             var mainNavigator = new MainNavigatorPageObject(_webDriver);
@@ -29,6 +45,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(3)]
         [Description("03. Ввод данных для соединения")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature3")]
+        [AllureStory("Story3")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue3")]
+        [AllureTms("Tms3")]
         public void EnteringDataForNavigator()
         {
             var switchPages = new SwitchPageSettings(_webDriver);
@@ -47,6 +69,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(4)]
         [Description("04. Ввод данных для доп. соединения")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature4")]
+        [AllureStory("Story4")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue4")]
+        [AllureTms("Tms4")]
         public void EnteringDataForNavigatorAdditionalDeviceManually()
         {
             var controlPanel = new ControlPanelPageObject(_webDriver);
@@ -59,6 +87,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(5)]
         [Description("05. Удаление соединения")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature5")]
+        [AllureStory("Story5")]
+        [AllureOwner("Owner5")]
+        [AllureIssue("Issue5")]
+        [AllureTms("Tms5")]
         public void DeleteAdditionDevice()
         {
             var controlPanel = new ControlPanelPageObject(_webDriver);

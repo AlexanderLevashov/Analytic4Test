@@ -7,7 +7,7 @@ namespace Analytic4Tests
     public class ParametersForAuthorisationTests
     {
         public static string Russian { get; } = "Русский";
-        public static string English { get; } = "English";
-        public static string Chinese { get; } = "中文";
+        public static string English { get; } = "Engilsh";
+        public static string Chinese { get; } = "中國人";
     } 
 }

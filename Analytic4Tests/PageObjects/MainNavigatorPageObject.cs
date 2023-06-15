@@ -15,8 +15,11 @@ namespace Analytic4Tests.PageObjects
         private readonly By _panelFormLogOut = By.CssSelector(".mat-menu-content");
         private readonly By _parametersForPanelLogOut = By.CssSelector(".mat-focus-indicator");
         private readonly By _buttonChangeLanguage = By.CssSelector("button[class*='mat-focus-indicator mat-menu-trigger']");
+        private readonly By _buttonChangeLocalisation = By.XPath("//button[2]/a4-button/button");
         private readonly By _panelForChangeLanguage = By.CssSelector(".mat-menu-panel");
+        private readonly By _panelForChangeLocalisation = By.CssSelector(".mat-menu-panel");
         private readonly By _parametersForPanelChangeLanguage = By.CssSelector(".mat-focus-indicator");
+        private readonly By _parametersForPanelChangeLocalisation = By.CssSelector(".mat-focus-indicator");
         #endregion
 
         #region Настройка приборов
@@ -99,6 +102,20 @@ namespace Analytic4Tests.PageObjects
 
             return this;
         }
+        #endregion
+
+        #region Выбор локализации
+        public MainNavigatorPageObject ChangeLocalisation(string nameParameters)
+        {
+            WaitUntil.WaitElement(_webDriver, _panelFormLogOut);
+            _webDriver.FindElement(_buttonChangeLocalisation).Click();
+
+            WaitUntil.WaitElement(_webDriver, _panelForChangeLocalisation);
+            _webDriver.FindElements(_parametersForPanelChangeLocalisation).First(x => x.Text == nameParameters).Click();
+
+            return this;
+        }
+
         #endregion
 
         #region Настройка приборов

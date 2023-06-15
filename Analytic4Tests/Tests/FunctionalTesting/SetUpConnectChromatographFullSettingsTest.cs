@@ -7,15 +7,24 @@ using Analytic4Tests.PageObjects.CommonPageObject.ModePlannerPageObject;
 using Analytic4Tests.PageObjects.CommonPageObject.PlannerPageObject;
 using Analytic4Tests.PageObjects.CommonPageObject.StatePlannerPageObject;
 using Analytic4Tests.Settings;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace Analytic4Tests.Tests.FunctionalTesting
 {
     [TestFixture]
+    [AllureNUnit]
     public class SetUpConnectChromatographFullSettingsTest : BaseTest
     {
         [Test, Order(1)]
         [Description("01. Авторизация и ввод данных для неё")]
+        [AllureSeverity(SeverityLevel.normal)]
+        [AllureFeature("Feature1")]
+        [AllureStory("Story1")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue1")]
+        [AllureTms("Tms1")]
         public void Authorisation()
         {        
             var authorisation = new AuthorisationPageObject(_webDriver);
@@ -25,6 +34,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(2)]
         [Description("02. Создание соединения")]
+        [AllureSeverity(SeverityLevel.minor)]
+        [AllureFeature("Feature2")]
+        [AllureStory("Story2")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue2")]
+        [AllureTms("Tms2")]
         public void CreateConnection()
         {
             var mainNavigator = new MainNavigatorPageObject(_webDriver);
@@ -35,6 +50,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(3)]
         [Description("03. Ввод данных для соединения")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature3")]
+        [AllureStory("Story3")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue3")]
+        [AllureTms("Tms3")]
         public void EnteringDataForNavigator()
         {
             var switchPages = new SwitchPageSettings(_webDriver);
@@ -52,6 +73,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(4)]
         [Description("04. Добавление n-количества анализов")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature4")]
+        [AllureStory("Story4")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue4")]
+        [AllureTms("Tms4")]
         public void AddNumberAnalysis()
         {
             var switchPages = new SwitchPageSettings(_webDriver);
@@ -64,6 +91,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(5)]
         [Description("05. Заполнения данных в анализе")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature5")]
+        [AllureStory("Story5")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue5")]
+        [AllureTms("Tms5")]
         public void EnteringDataForPlanner()
         {
             var analysis = new AnalysisPageObject(_webDriver);
@@ -80,6 +113,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(6)]
         [Description("06. Переключение на 'Конфигурацию'")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature6")]
+        [AllureStory("Story6")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue6")]
+        [AllureTms("Tms6")]
         public void SwitchingConfiguration()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
@@ -89,6 +128,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(7)]
         [Description("07. Заполнение общих параметров 'Конфигурации' для хроматографа")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature7")]
+        [AllureStory("Story7")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue7")]
+        [AllureTms("Tms7")]
         public void EnteringCommonParametersForChromatograph()
         {
             var switchPages = new SwitchPageSettings(_webDriver);
@@ -105,6 +150,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(8)]
         [Description("08. Заполнение общих параметров 'Конфигурации' для термостата колонок")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature8")]
+        [AllureStory("Story8")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue8")]
+        [AllureTms("Tms8")]
         public void EneteringCommonParametersForOven()
         {
             var commonParameters = new CommonParametersPageObject(_webDriver);
@@ -115,6 +166,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(9)]
         [Description("09. Заполнение общих параметров 'Конфигурации' для ДТП-2 ")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature9")]
+        [AllureStory("Story9")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue9")]
+        [AllureTms("Tms9")]
         public void EneteringCommonParametersForTCD2()
         {
             var commonParameters = new CommonParametersPageObject(_webDriver);
@@ -126,6 +183,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(10)]
         [Description("10. Заполнение общих параметров 'Конфигурации' для ДТП-1 ")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature10")]
+        [AllureStory("Story10")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue10")]
+        [AllureTms("Tms10")]
         public void EneteringCommonParametersForTCD1()
         {
             var commonParameters = new CommonParametersPageObject(_webDriver);
@@ -137,6 +200,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(11)]
         [Description("Переключение на вкладку 'Охлаждение и поджиг'")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature11")]
+        [AllureStory("Story11")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue11")]
+        [AllureTms("Tms11")]
         public void Cooling()
         {
             var configurationParameters = new ConfigurationPageObject(_webDriver);
@@ -153,6 +222,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(12)]
         [Description("12. Переключение на 'Режим'")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature12")]
+        [AllureStory("Story12")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue12")]
+        [AllureTms("Tms12")]
         public void SwitchingMode()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
@@ -162,6 +237,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(13)]
         [Description("13. Параметры термостата")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature13")]
+        [AllureStory("Story13")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue13")]
+        [AllureTms("Tms13")]
         public void MainMode()
         {
             var modePage = new ModePageObject(_webDriver);
@@ -183,6 +264,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(14)]
         [Description("14. Запись сигнала")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature14")]
+        [AllureStory("Story14")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue14")]
+        [AllureTms("Tms14")]
         public void RecordSignal()
         {     
             var modePage = new ModePageObject(_webDriver);
@@ -200,6 +287,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
        
         [Test, Order(15)]
         [Description("15. События времени")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature15")]
+        [AllureStory("Story15")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue15")]
+        [AllureTms("Tms15")]
         public void RunTimeEvent()
         {
             var modePage = new ModePageObject(_webDriver);
@@ -213,6 +306,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(16)]
         [Description("16. Переключение на 'Состояние'")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature16")]
+        [AllureStory("Story16")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue16")]
+        [AllureTms("Tms16")]
         public void State()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
@@ -233,6 +332,12 @@ namespace Analytic4Tests.Tests.FunctionalTesting
 
         [Test, Order(17)]
         [Description("17. Переключение на 'Подключения'")]
+        [AllureSeverity(SeverityLevel.trivial)]
+        [AllureFeature("Feature17")]
+        [AllureStory("Story17")]
+        [AllureOwner("Owner1")]
+        [AllureIssue("Issue17")]
+        [AllureTms("Tms17")]
         public void Connections()
         {
             var matProgressBar = new MatProgressBarPageObject(_webDriver);
