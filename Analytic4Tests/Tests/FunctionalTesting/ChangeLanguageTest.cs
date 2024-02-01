@@ -29,7 +29,21 @@ namespace Analytic4Tests.Tests.FunctionalTesting
         [Description("02. Изменить язык")]
         public void ChangeLanguage()
         {
-            var mainNavigator = new MainNavigatorPageObject(_webDriver);
+            var mainNavigator = new MainNavigatorPageObject(_webDriver);        
+            mainNavigator
+                .Obscure()
+                .LogOut(LogOutForNavigatorTests.Language)
+                .ChangeLanguage(ParametersForAuthorisationTests.English)
+                .LogOut(LogOutForNavigatorTests.LanguageEnglish)
+                .ChangeLanguage(ParametersForAuthorisationTests.Chinese)
+                .LogOut(LogOutForNavigatorTests.LanguageChinise)
+                .ChangeLanguage(ParametersForAuthorisationTests.Russian)
+                //
+                .LogOut(LogOutForNavigatorTests.Localisation)
+                .ChangeLocalisation(LocalisationSettings.TurnOn)
+                .LogOut(LogOutForNavigatorTests.Localisation)
+                .ChangeLocalisation(LocalisationSettings.TurnOn);
+
 
             //mainNavigator.Obscure();
 
@@ -45,20 +59,6 @@ namespace Analytic4Tests.Tests.FunctionalTesting
             //        mainNavigator.LogOut($"{language}{lang}");
             //    }
             //}
-
-            mainNavigator
-                .Obscure()
-                .LogOut(LogOutForNavigatorTests.Language)
-                .ChangeLanguage(ParametersForAuthorisationTests.English)
-                .LogOut(LogOutForNavigatorTests.LanguageEnglish)
-                .ChangeLanguage(ParametersForAuthorisationTests.Chinese)
-                .LogOut(LogOutForNavigatorTests.LanguageChinise)
-                .ChangeLanguage(ParametersForAuthorisationTests.Russian)
-                //
-                .LogOut(LogOutForNavigatorTests.Localisation)
-                .ChangeLocalisation(LocalisationSettings.TurnOn)
-                .LogOut(LogOutForNavigatorTests.Localisation)
-                .ChangeLocalisation(LocalisationSettings.TurnOn);
         }
     }
 }
